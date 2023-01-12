@@ -1,0 +1,38 @@
+ghci> fa x y = x * x + y * y
+ghci> x=3
+ghci> y=2
+ghci> :t fa
+fa :: Num a => a -> a -> a
+ghci> x=3
+ghci> y=2
+ghci> fa x y
+13
+
+ghci> factor 0 =1
+ghci> factor n = n* factor (n-1)
+ghci> factor n = product [1..n]
+ghci> :t factor
+factor :: (Num a, Enum a) => a -> a
+ghci> n = 5
+ghci> factor 5
+120
+ghci> factor 6
+720
+
+ghci> fb x = if (x `mod` 2 == 0 ) then "par" else "impar"
+ghci> :t fb
+fb :: Integral a => a -> String
+ghci> fb 3
+"impar"
+ghci> fb 2
+"par"
+ghci> fb 242
+"par"
+
+ghci> fd x y = if (x > y * 2) then x else y
+ghci> :t fd
+fd :: (Ord a, Num a) => a -> a -> a
+ghci> fd 2 3
+3
+
+
